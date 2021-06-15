@@ -17,3 +17,7 @@ RUN ./install_basic_tools.sh
 RUN ./install_python_related.sh
 RUN ./install_ros_melodic.sh
 RUN ./install_x11vnc.sh
+
+WORKDIR $DOCKER/scripts
+COPY scripts .
+RUN chmod +x *.sh
