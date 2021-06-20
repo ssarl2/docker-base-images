@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y tzdata
 ENV DOCKER /home/docker
 
 WORKDIR $DOCKER/installation
-COPY installation .
+COPY installation ./installation
 RUN chmod +x install_*.sh
 
 RUN ./install_basic_tools.sh
@@ -19,5 +19,5 @@ RUN ./install_ros_melodic.sh
 RUN ./install_x11vnc.sh
 
 WORKDIR $DOCKER/scripts
-COPY scripts .
+COPY scripts ./scripts
 RUN chmod +x *.sh
