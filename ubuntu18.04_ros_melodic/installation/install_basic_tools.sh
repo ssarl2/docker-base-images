@@ -9,4 +9,5 @@ apt-get install -y \
     cmake \
     curl \
     wget \
-    nano
+    nano \
+    tree
