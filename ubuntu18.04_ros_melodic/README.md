@@ -2,7 +2,7 @@
 ### build
 `bash build.sh`
 ### setting
-Connect your code folder to workspace folder [here]()
+Connect your code folder to workspace folder [here](workspace)
 ### run
 `bash run.sh`
 ### use
