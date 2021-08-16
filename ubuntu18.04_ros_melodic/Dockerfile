@@ -8,9 +8,10 @@ ENV NVIDIA_DRIVER_CAPABILITIES \
     ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
 
 # install
+WORKDIR "/home/ubuntu/scripts"
+COPY scripts .
 WORKDIR "/home/ubuntu/installation"
 COPY installation .
-COPY scripts .
 RUN chmod +x install_*.sh
 RUN ./install_basic_tools.sh
 RUN ./install_python_related.sh
