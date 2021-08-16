@@ -17,6 +17,7 @@ sudo docker run --name=ub18_melodic --rm --privileged \
     -e XAUTHORITY=$XAUTH \
     -v $XAUTH:$XAUTH \
     -v $VOLUME_PATH:/home/$USER_DOCKER/test_folder \
+    -v /dev:/dev \
     --runtime=nvidia \
     $IMAGE_VERSION \
     tail -f /dev/null
