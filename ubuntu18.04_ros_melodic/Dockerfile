@@ -32,4 +32,4 @@ ENV USER="${USER}" \
 
 RUN echo 'source /opt/ros/melodic/setup.bash' >> /home/${USER}/.bashrc
 
-WORKDIR "${HOME}"
+WORKDIR "${HOME}/workspace"
