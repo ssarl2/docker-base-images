@@ -17,6 +17,7 @@ RUN ./install_basic_tools.sh
 RUN ./install_python_related.sh
 RUN ./install_vscode.sh
 RUN ./install_useful_tools.sh
+RUN ./install_ros_melodic_related.sh
 
 # create an user
 ARG UID=1000

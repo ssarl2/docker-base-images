@@ -10,4 +10,5 @@ apt-get install -y \
     curl \
     wget \
     nano \
+    git \
     tree
