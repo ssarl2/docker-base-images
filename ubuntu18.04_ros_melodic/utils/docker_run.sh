@@ -2,7 +2,7 @@
 
 VOLUME_PATH=$PWD/../workspace
 USER_DOCKER=melodic
-IMAGE_VERSION=ssarl2/docker-base-images:v1.1
+IMAGE_VERSION=ub18_melodic:latest
 
 xhost +
 echo "Running docker env"

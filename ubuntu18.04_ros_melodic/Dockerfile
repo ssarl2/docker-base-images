@@ -7,17 +7,12 @@ ENV NVIDIA_VISIBLE_DEVICES \
 ENV NVIDIA_DRIVER_CAPABILITIES \
     ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
 
-# install
+# copy
 WORKDIR "/home/ubuntu/scripts"
 COPY scripts .
 WORKDIR "/home/ubuntu/installation"
 COPY installation .
-RUN chmod +x install_*.sh
-RUN ./install_basic_tools.sh
-RUN ./install_python_related.sh
-RUN ./install_vscode.sh
-RUN ./install_useful_tools.sh
-RUN ./install_ros_melodic_related.sh
+RUN chmod +x /home/ubuntu/installation/*.sh
 
 # create an user
 ARG UID=1000
@@ -30,7 +25,12 @@ RUN apt-get update && apt-get install -y sudo && \
 USER "${USER}"
 ENV USER="${USER}" \
     HOME="/home/${USER}"
-
-RUN echo 'source /opt/ros/melodic/setup.bash' >> /home/${USER}/.bashrc
-
 WORKDIR "${HOME}/workspace"
+
+# install
+ARG INSTALL_FOLDER=/home/ubuntu/installation
+RUN ${INSTALL_FOLDER}/install_basic_tools.sh
+RUN ${INSTALL_FOLDER}/install_vscode.sh
+RUN ${INSTALL_FOLDER}/install_python_related.sh
+RUN ${INSTALL_FOLDER}/install_useful_tools.sh
+RUN ${INSTALL_FOLDER}/install_ros_melodic_related.sh
