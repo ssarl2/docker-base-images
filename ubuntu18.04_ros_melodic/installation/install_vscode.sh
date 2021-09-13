@@ -17,6 +17,8 @@ code --install-extension PKief.material-icon-theme
 code --install-extension Equinusocio.vsc-material-theme
 code --install-extension CoenraadS.bracket-pair-colorizer
 code --install-extension vincaslt.highlight-matching-tag
+code --install-extension aaron-bond.better-comments
+code --install-extension ms-vscode.cmake-tools
 
 echo "{
     \"security.workspace.trust.enabled\": false
