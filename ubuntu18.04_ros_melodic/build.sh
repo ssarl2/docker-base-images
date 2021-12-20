@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t ssarl2/docker-ide:latest .
+docker build -t ssarl2/docker-base-images:latest .

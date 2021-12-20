@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker exec -it docker_ide bash
+docker exec -it personal_ide bash
