@@ -1,11 +1,19 @@
 #!/bin/bash
 
+echo 'source /opt/ros/melodic/setup.bash' >> /home/${USER}/.bashrc
+
 sudo apt-get update
 sudo apt-get install -y \
+    cmake \
+    curl \
+    wget \
+    nano \
+    tree
+
+#* python related
+sudo apt-get install -y \
     python-pip \
-    python-dev \
     python3-pip \
-    python3-dev \
     python3-vcstool \
     python3-catkin-tools
 
