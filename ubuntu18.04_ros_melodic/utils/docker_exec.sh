@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker exec -it ub18_melodic bash
+docker exec -it personal_ide bash

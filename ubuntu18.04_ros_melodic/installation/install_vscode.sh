@@ -17,14 +17,46 @@ code --install-extension PKief.material-icon-theme
 code --install-extension Equinusocio.vsc-material-theme
 code --install-extension CoenraadS.bracket-pair-colorizer
 code --install-extension vincaslt.highlight-matching-tag
+<<<<<<< HEAD
 
 echo "{
     \"security.workspace.trust.enabled\": false
+=======
+code --install-extension aaron-bond.better-comments
+code --install-extension ms-vscode.cmake-tools
+code --install-extension hediet.vscode-drawio
+code --install-extension yzhang.markdown-all-in-one
+
+echo "{
+    \"security.workspace.trust.enabled\": false,
+>>>>>>> few_updates_after_v1.2_PR
     \"workbench.iconTheme\": \"material-icon-theme\",
     \"workbench.colorTheme\": \"Community Material Theme Darker High Contrast\",
     \"files.autoSave\": \"afterDelay\",
     \"editor.minimap.enabled\": false,
     \"workbench.activityBar.visible\": false,
     \"workbench.statusBar.visible\": false,
+<<<<<<< HEAD
     \"window.menuBarVisibility\": \"toggle\"
 }" >  ~/.config/Code/User/settings.json
+=======
+    \"window.menuBarVisibility\": \"toggle\",
+    \"editor.multiCursorModifier\": \"ctrlCmd\"
+}" >  ~/.config/Code/User/settings.json
+
+echo "// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        \"key\": \"ctrl+shift+x\",
+        \"command\": \"workbench.action.toggleMaximizedPanel\"
+    },
+    {
+        \"key\": \"ctrl+shift+q\",
+        \"command\": \"workbench.action.toggleActivityBarVisibility\"
+    }
+]
+" > ~/.config/Code/User/keybindings.json
+
+# emoji error with gtk3.0 in ubuntu18.04
+echo 'alias code="GTK_IM_MODULE=xim code"' >> /home/${USER}/.bashrc
+>>>>>>> few_updates_after_v1.2_PR

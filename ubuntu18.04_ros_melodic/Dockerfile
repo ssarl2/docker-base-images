@@ -1,6 +1,8 @@
 # ubuntu 18.04
 FROM osrf/ros:melodic-desktop-full
 
+ARG INSTALL_FOLDER=/home/ubuntu/installation
+
 # nvidia-container-runtime
 ENV NVIDIA_VISIBLE_DEVICES \
     ${NVIDIA_VISIBLE_DEVICES:-all}
@@ -8,11 +10,9 @@ ENV NVIDIA_DRIVER_CAPABILITIES \
     ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
 
 # copy
-WORKDIR "/home/ubuntu/scripts"
-COPY scripts .
-WORKDIR "/home/ubuntu/installation"
-COPY installation .
-RUN chmod +x /home/ubuntu/installation/*.sh
+COPY scripts /home/ubuntu/scripts
+COPY installation ${INSTALL_FOLDER}
+RUN chmod -R 755 ${INSTALL_FOLDER}
 
 # create an user
 ARG UID=1000
@@ -28,9 +28,6 @@ ENV USER="${USER}" \
 WORKDIR "${HOME}/workspace"
 
 # install
-ARG INSTALL_FOLDER=/home/ubuntu/installation
-RUN ${INSTALL_FOLDER}/install_basic_tools.sh
+RUN ${INSTALL_FOLDER}/install_base.sh
 RUN ${INSTALL_FOLDER}/install_vscode.sh
-RUN ${INSTALL_FOLDER}/install_python_related.sh
-RUN ${INSTALL_FOLDER}/install_useful_tools.sh
-RUN ${INSTALL_FOLDER}/install_ros_melodic_related.sh
+RUN ${INSTALL_FOLDER}/install_needs.sh
