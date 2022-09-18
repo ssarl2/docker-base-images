@@ -8,7 +8,12 @@ sudo apt-get install -y \
     curl \
     wget \
     nano \
-    tree
+    tree \
+    bash-completion \
+    ssh \
+    build-essential \
+    gdb \
+    g++
 
 #* python related
 sudo apt-get install -y \
