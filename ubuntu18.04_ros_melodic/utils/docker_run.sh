@@ -4,8 +4,6 @@ VOLUME_PATH=$PWD/../workspace
 USER_DOCKER=melodic
 IMAGE_VERSION=ssarl2/docker-base-images:latest
 
-xhost +
-
 sudo docker run --name=personal_ide --rm --privileged \
     --network host \
     -e "ROS_HOSTNAME=localhost" \

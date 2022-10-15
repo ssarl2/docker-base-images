@@ -18,6 +18,7 @@ RUN chmod -R 755 ${INSTALL_FOLDER}
 ARG UID=1000
 ARG USER=melodic
 RUN useradd ${USER} -u ${UID} -U -d /home/${USER} -m -s /bin/bash
+RUN usermod -g root -G sudo -u 1000 "${USER}"
 RUN apt-get update && apt-get install -y sudo && \
     echo "${USER} ALL=(ALL) NOPASSWD: ALL" > "/etc/sudoers.d/${USER}" && \
     chmod 440 "/etc/sudoers.d/${USER}"
