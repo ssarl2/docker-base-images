@@ -1,5 +1,8 @@
 #!/bin/bash
 
+SCRIPT_DIR=$( dirname -- "$( readlink -f -- "$0"; )"; )
+cd $SCRIPT_DIR
+
 cd utils
 bash docker_run.sh &
 
@@ -14,4 +17,4 @@ done
 
 bash docker_exec.sh
 
-docker stop personal_ide
+docker stop docker_ide
