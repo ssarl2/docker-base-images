@@ -21,6 +21,7 @@ code --install-extension aaron-bond.better-comments
 code --install-extension ms-vscode.cmake-tools
 code --install-extension hediet.vscode-drawio
 code --install-extension yzhang.markdown-all-in-one
+code --install-extension ms-vscode.cpptools-extension-pack
 
 echo "{
     \"security.workspace.trust.enabled\": false,
