@@ -17,4 +17,4 @@ done
 
 bash docker_exec.sh
 
-docker stop docker_ide
+docker stop personal_ide
